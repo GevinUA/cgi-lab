@@ -18,8 +18,7 @@ cookie = SimpleCookie(os.environ.get("HTTP_COOKIE"))
 
 #first determine if I can use cookie to log in
 if(cookie.get("username") and cookie.get("password") and cookie.get("username").value == secret.username and cookie.get("password").value == secret.password):
-	print("Content-type:text/html\r\n\r\n")
-	print(templates.secret_page(cookie.get("username").value, cookie.get("password").value))
+	print("Content-type:text/html\r\n\r\n"+templates.secret_page(cookie.get("username").value, cookie.get("password").value))
 #if I can't, and I havn't input my username and password, then show login page
 elif(username ==None and password == None):
     print(templates.login_page())
