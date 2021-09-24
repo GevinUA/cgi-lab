@@ -1,0 +1,68 @@
+Question 1: How do you inspect all environment variables in Python?
+
+import os
+print(os.environ)
+
+
+Question 2: What environment variable contains the query parameter data?
+
+"QUERY_STRING": ""
+
+
+Question 3: What environment variable contains information about the user’s browser?
+
+ "HTTP_USER_AGENT"
+
+It contains the following information:
+ "HTTP_USER_AGENT": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.54 Safari/537.36"
+
+
+ Question 4: How does the POSTed data come to the CGI script?
+
+<form method="POST" action="login.py">
+ In login_page function, it declares that the posted data will be executed by "login.py" in CGI script.
+ After that, the login.py will get the username and password data from "form = cgi.FieldStorage()"
+ and print that out.
+
+
+ Question 5: What is the HTTP header syntax to set a cookie from the server?
+
+ simple syntax is Set-Cookie: <cookie_name>=<cookie_value>
+
+Complete version is like following:
+
+HTTP/1.0 200 OK
+Content-type: text/html
+Set-Cookie: yummy_cookie=choco
+Set-Cookie: tasty_cookie=strawberry
+
+...
+
+
+
+Question 6: What is the HTTP header syntax the browser uses to send the cookie back?
+
+The local cookie will be in "Cookie:" part.
+e.g. Cookie: yummy_cookie=choco; tasty_cookie=strawberry
+
+Complete version is like following:
+
+GET /sample_page.html HTTP/1.1
+Host: www.example.org
+Cookie: yummy_cookie=choco; tasty_cookie=strawberry
+
+
+
+Question 7: In your own words, what are cookies used for?
+
+Cookies used to save some preference information or some password. It is send by server to the requester, and requester will save those information locally. Next time, it requests the same server, it will also send those local information together to let server knows those preference setting.
+
+
+Question 8: What is the link to your code on GitHub?
+
+https://github.com/GevinUA/cgi-lab
+
+https://github.com/GevinUA/cgi-lab.git
+
+
+
